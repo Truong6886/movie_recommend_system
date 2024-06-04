@@ -8,7 +8,7 @@ import joblib
 ratings, movies, user_ids, user_ids_set = load_data()
 
 
-zip_file = 'matrix_R.zip'
+zip_file = '/mount/src/movie_recommend_system/pages/matrix_R.zip'
 
 with zipfile.ZipFile(zip_file, 'r') as z:
     with z.open('matrix_R.pkl') as f:
