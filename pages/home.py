@@ -5,7 +5,11 @@ import streamlit as st
 import pickle
 
 ratings, movies, user_ids, user_ids_set = load_data()
-R = load('matrix_R.pkl')
+zip_file = 'matrix_R.zip'
+
+# Mở tệp PKL trong tệp ZIP bằng Joblib
+R = joblib.load(zip_file, member='matrix_R.pkl')
+
 # Load data from CSV file
 # W_nmf, H_nmf, R = algorithm_nmf()
 film_poster = pd.read_csv('film_poster.csv')
