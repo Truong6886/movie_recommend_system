@@ -13,7 +13,6 @@ zip_file = 'matrix_R.zip'
 with zipfile.ZipFile(zip_file, 'r') as z:
     with z.open('matrix_R.pkl') as f:
         R = joblib.load(f)
-
 # Load data from CSV file
 # W_nmf, H_nmf, R = algorithm_nmf()
 film_poster = pd.read_csv('film_poster.csv')
