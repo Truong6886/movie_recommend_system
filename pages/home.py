@@ -3,12 +3,16 @@ from process_data import *
 from joblib import load
 import streamlit as st
 import pickle
-
+import zipfile
+import joblib
 ratings, movies, user_ids, user_ids_set = load_data()
+
+
 zip_file = 'matrix_R.zip'
 
-# Mở tệp PKL trong tệp ZIP bằng Joblib
-R = joblib.load(zip_file, member='matrix_R.pkl')
+with zipfile.ZipFile(zip_file, 'r') as z:
+    with z.open('matrix_R.pkl') as f:
+        R = joblib.load(f)
 
 # Load data from CSV file
 # W_nmf, H_nmf, R = algorithm_nmf()
