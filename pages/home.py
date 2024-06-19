@@ -43,7 +43,7 @@ def show_home():
             # Plot genre counts
             plot_genre_counts(genre_counts, user_id_str)
             num_recommendations = st.selectbox('Chọn số lượng đề xuất phim', [5, 10], key='num_rec')
-            algorithm = st.selectbox("Chọn thuật toán", ["Thuật toán NMF", "Thuật toán Lee-Seung(Khoảng cách Eculid)","Thuật toán Lee-Seung(Độ phân kỳ Kullback-Leibler)"])
+            algorithm = st.selectbox("Chọn thuật toán", ["Thuật toán NMF", "Thuật toán Lee-Seung(Khoảng cách Euclid)","Thuật toán Lee-Seung(Độ phân kỳ Kullback-Leibler)"])
             if algorithm == "Thuật toán NMF":
                 if st.button(':red[Đề xuất]'):
                     if not user_ids:
